@@ -1,7 +1,7 @@
 GROUP B10
-## PEER TO PEER SERVICE
+## 
 ### Project overview
-Student Peer-to-Peer Service Marketplace, a platform where students can offer and request goods and services (such as tutoring, selling notes, and graphic design). The system will feature login/registration, chat, ratings & reviews, and secure payment integration. It is designed not only to promote collaboration and resource sharing but also to give students the opportunity to earn money from their skills and services.
+This project involves designing and developing a secure, user-friendly web-based journal application that allows users to record, manage, and reflect on their personal thoughts and experiences. The application will support features such as daily entries, mood tracking, calender planner and to-do list manager. This helps users stay organized while reflecting on their personal well-being. 
 
 ### Project Members
 1. Abraham Kilwake-190400 
