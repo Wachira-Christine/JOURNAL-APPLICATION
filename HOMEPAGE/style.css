@@ -1,0 +1,632 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif; /* more journal-like */
+}
+
+body {
+    background: #E9E2D0; /* warm parchment background */
+    background: url("images/download (7).jpeg") no-repeat center center fixed;
+    background-size: cover;
+    color: #3C2C23; /* espresso brown text */
+    line-height: 1.7;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Layout */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+header {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    border-bottom: 2px dashed #B89C7D; /* vintage dashed line */
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #7C5A42; /* sepia */
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-family: 'Brush Script MT', cursive; /* handwriting style */
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #7A7F5C; /* dusty olive */
+    font-style: italic;
+}
+
+.date {
+    font-size: 1.1rem;
+    color: #3C2C23;
+    margin-top: 10px;
+}
+
+/* Journal Cards */
+.card {
+    background: #FDFBF7; /* cream paper */
+    border-radius: 6px;
+    box-shadow: 4px 6px 12px rgba(60, 44, 35, 0.2);
+    padding: 25px;
+    margin-bottom: 20px;
+    color: #3C2C23;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+
+    /* torn edge effect (texture border) */
+    border: 6px solid transparent;
+    border-image: url("https://i.imgur.com/9pZVYjP.png") 30 round;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(60, 44, 35, 0.25);
+}
+
+/* Fake tape on top of cards */
+.card::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 90px;
+    height: 28px;
+    background: #E3C565; /* washi tape yellow */
+    opacity: 0.8;
+    box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    z-index: 1;
+}
+
+/* Headings */
+h2 {
+    font-size: 1.5rem;
+    color: #7C5A42; /* sepia */
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-family: 'Brush Script MT', cursive;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: #B89C7D; /* kraft underline */
+}
+
+/* Mood Section */
+.mood-options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.mood-option {
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 6px;
+    background: #E9E2D0; /* parchment */
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    color: #3C2C23;
+}
+
+.mood-option:hover {
+    background: #C6A77D; /* kraft tan */
+    color: #fff;
+}
+
+.mood-option i {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.mood-option.active {
+    background: #7A7F5C; /* dusty olive */
+    color: #fff;
+    font-weight: bold;
+}
+
+.mood-option span {
+    font-size: 0.9rem;
+}
+
+/* Sound Player */
+.sound-player {
+    display: flex;
+    align-items: center;
+    background: #E9E2D0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.05);
+}
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #7A7F5C;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+}
+
+.play-btn:hover {
+    background: #5C6046;
+    transform: scale(1.05);
+}
+
+.sound-info {
+    flex: 1;
+}
+
+.sound-title {
+    font-weight: 600;
+    color: #3C2C23;
+}
+
+.sound-time {
+    font-size: 0.9rem;
+    color: #7A7F5C;
+    margin-top: 3px;
+}
+/* Quote */
+.quote {
+    font-style: italic;
+    color: #5E7C73; /* muted teal */
+    line-height: 1.8;
+    padding: 15px;
+    background: #FDFBF7;
+    border-left: 3px solid #B89C7D;
+    border-radius: 0 8px 8px 0;
+    margin: 15px 0;
+}
+
+.author {
+    text-align: right;
+    color: #7C5A42;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+
+
+.event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: #f7f3f0; /* warm light background */
+    color: #3b2f2f;      /* dark brown text */
+    font-family: 'Playfair Display', serif; /* elegant serif font */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* space between events */
+}
+.event-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.event:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.event-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background: #7A7F5C;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+}
+
+.event-details h3 {
+    font-size: 1.1rem;
+    color: #3C2C23;
+    margin-bottom: 2px;
+}
+
+.event-details p {
+    font-size: 0.85rem;
+    color: #7A7F5C;
+}
+.event-actions {
+    display: flex;
+    gap: 5px;
+}
+.event-actions button {
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    color: white;
+}
+
+/* Edit button */
+.event-actions .edit-btn {
+    background-color: #046307;
+}
+
+.event-actions .edit-btn:hover {
+    background-color: #034204;
+}
+
+/* Delete button */
+.event-actions .delete-btn {
+    background-color: #046307;
+}
+
+.event-actions .delete-btn:hover {
+    background-color: #034204;
+}
+
+
+
+
+
+button.open-modal-btn, button[type="submit"]{
+    padding: 8px 14px;
+    margin-top: 10px;
+    background-color: #046307;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.open-modal-btn:hover,button[type="submit"]:hover {
+    background-color: #046307;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+
+
+.event-actions button {
+    margin-left: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+}
+
+/* Edit icon button */
+.event-actions .edit-btn {
+    background-color: #046307;
+    color: white;
+}
+
+.event-actions .edit-btn:hover {
+    background-color: #034204;
+}
+
+/* Delete icon button */
+.event-actions .delete-btn {
+    background-color: #046307;
+    color: white;
+}
+
+.event-actions .delete-btn:hover {
+    background-color:#034204;
+}
+
+
+
+
+
+/* Buttons container inside each event or inspiration */
+.quote button,
+.event button {
+    margin-left: 8px;
+    padding: 3px 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Edit button styling */
+.quote button:first-of-type,
+.event button:first-of-type {
+    background-color: #6c63ff; /* Deep purple for elegance */
+    color: white;
+}
+
+.quote button:first-of-type:hover,
+.event button:first-of-type:hover {
+    background-color: #574fd6;
+}
+
+/* Delete button styling */
+.quote button:last-of-type,
+.event button:last-of-type {
+    background-color: #e53e3e; /* Warm red for delete */
+    color: white;
+}
+
+.quote button:last-of-type:hover,
+.event button:last-of-type:hover {
+    background-color: #c53030;
+}
+
+/* Flex layout for better spacing */
+.quote,
+.event {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    background: #f7f3f0; /* Warm light background for readability */
+    color: #3b2f2f;      /* Dark brown text for elegance */
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+
+.modal-content {
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+.modal-content input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+/* Memories */
+.memories {
+    margin-top: 20px;
+}
+
+.memory {
+    background: #E9E2D0;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.memory-text {
+    color: #3C2C23;
+    margin-bottom: 10px;
+}
+
+.memory-time {
+    font-size: 0.85rem;
+    color: #7A7F5C;
+    text-align: right;
+}
+
+/* Intentions */
+.intentions {
+    margin-top: 20px;
+}
+
+.intention {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background: #FDFBF7;
+    transition: background 0.3s ease;
+    border: 1px dashed #C6A77D;
+}
+
+.intention:hover {
+    background: #E9E2D0;
+}
+
+.intention input {
+    margin-right: 15px;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.intention label {
+    color: #3C2C23;
+    cursor: pointer;
+}
+
+.intention.completed label {
+    text-decoration: line-through;
+    color: #7A7F5C;
+}
+
+.add-intention {
+    display: flex;
+    margin-top: 20px;
+}
+
+.add-intention input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid #C6A77D;
+    border-radius: 6px 0 0 6px;
+    font-size: 1rem;
+    outline: none;
+    background: #FDFBF7;
+}
+
+.add-intention button {
+    background: #7C5A42;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.add-intention button:hover {
+    background: #5C4031;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    border-bottom: 1px dashed #C6A77D;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #7A7F5C;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tab.active {
+    color: #7C5A42;
+    border-bottom: 2px solid #7C5A42;
+}
+
+/* Favorites */
+.favorites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.favorite-item {
+    background: #E9E2D0;
+    padding: 15px;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+    box-shadow: inset 2px 2px 6px rgba(0,0,0,0.05);
+}
+
+.favorite-item:hover {
+    transform: translateY(-3px);
+}
+
+.favorite-title {
+    font-weight: 600;
+    color: #3C2C23;
+    margin-bottom: 8px;
+}
+
+.favorite-desc {
+    font-size: 0.9rem;
+    color: #7A7F5C;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .mood-options {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .mood-option {
+        flex-basis: calc(33.333% - 10px);
+    }
+
+    .favorites {
+        grid-template-columns: 1fr;
+    }
+
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+
+
