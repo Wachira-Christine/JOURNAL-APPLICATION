@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Sidebar Navigation -->
+<div class="sidebar">
+    <h2>My Journal</h2>
+    <ul>
+        <li><a href="new-entry.html">New Entry</a></li>
+        <li><a href="journal.html">My Journal</a></li>
+        <li><button id="logoutBtn">Logout</button></li>
+    </ul>
+</div>
+
 <div class="journal-container">
     <div class="container">
         <header>
@@ -62,6 +73,8 @@
             </div>
             <button class="open-modal-btn" data-modal="inspirationsModal">ADD</button>
             <div class="author">— Thích Nhất Hạnh</div>
+
+
 
             <!-- Events Section -->
             <div class="events">
@@ -197,5 +210,7 @@
 </div>
 
     <script src="script.js"></script>
+<script src="sidebar.js"></script>
+
 </body>
 </html>
