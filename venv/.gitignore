@@ -8,6 +8,7 @@ venv/
 
 # Environment variables
 .env
+db.env
 
 # IDE / editor settings
 .idea/
