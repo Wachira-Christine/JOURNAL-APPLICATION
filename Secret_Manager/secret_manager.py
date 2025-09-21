@@ -25,4 +25,25 @@ def save_otp_to_db(username: str, otp: str) -> None:
     cursor.close()
     connection.close()
 
+def get_otp_from_db(username: str):
+    """Get OTP and expiry for a given user.
+    Returns tuple (otp_code, otp_expiry) or None if not found.
+    """
+    connection = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="0000",
+        database="journal_app"
+    )
 
+    cursor = connection.cursor()
+    sql = "SELECT otp_code, otp_expiry FROM users WHERE username=%s"
+    cursor.execute(sql, (username,))
+    result = cursor.fetchone()
+
+    cursor.close()
+    connection.close()
+
+    if result:
+        return result[0], result[1]
+    return None
