@@ -1,14 +1,17 @@
 # test_password_utils.py
-from password_utils import hash_password, verify_password
+from password_utils import PasswordManager
 
-def test_password_functions():
-    password = "SuperSecure123!"
-    hashed = hash_password(password)
+def test_password_manager():
+    manager=PasswordManager()
+    password = "Brezzy123!"
+    hashed = manager.hash_password(password)
     
-    assert verify_password(password, hashed) == True
-    assert verify_password("WrongPassword", hashed) == False
+    assert hashed != password, "Hashed password should not be the same as plain text"
+    assert manager.verify_password(password,hashed)
+    assert not manager.verify_password("WrongPassword", hashed)
 
     print("All tests passed!")
 
 if __name__ == "__main__":
-    test_password_functions()
+    test_password_manager()
+    print("Tests completed successfully.")
