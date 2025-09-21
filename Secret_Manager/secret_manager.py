@@ -1,6 +1,10 @@
 import random
+import os
+from dotenv import load_dotenv
 import mysql.connector
 import time
+
+load_dotenv(dotenv_path='db.env')
 
 def generate_login_otp() -> str:
     """Generate a 6-digit OTP for login."""
@@ -11,10 +15,11 @@ def save_otp_to_db(username: str, otp: str) -> None:
     expiry_time = int(time.time()) + 300
 
     connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="0000",
-        database="journal_app"
+        host=os.getenv("DB_HOST"),
+        port=int(os.getenv("DB_PORT")),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASS"),
+        database=os.getenv("DB_NAME")
     )
 
     cursor = connection.cursor()
@@ -36,10 +41,11 @@ def get_otp_from_db(username: str):
     Returns tuple (otp_code, otp_expiry) or None if not found.
     """
     connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="0000",
-        database="journal_app"
+        host=os.getenv("DB_HOST"),
+        port=int(os.getenv("DB_PORT")),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASS"),
+        database=os.getenv("DB_NAME")
     )
 
     cursor = connection.cursor()
