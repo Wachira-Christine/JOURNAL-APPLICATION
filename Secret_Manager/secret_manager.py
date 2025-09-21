@@ -25,6 +25,12 @@ def save_otp_to_db(username: str, otp: str) -> None:
     cursor.close()
     connection.close()
 
+def generate_and_store_otp(username: str) -> str:
+    """Generate an OTP, save it to the DB with expiry, and return it."""
+    otp = generate_login_otp()
+    save_otp_to_db(username, otp)
+    return otp
+
 def get_otp_from_db(username: str):
     """Get OTP and expiry for a given user.
     Returns tuple (otp_code, otp_expiry) or None if not found.
