@@ -2,7 +2,7 @@
 // Add this to your existing script.js or create a separate auth-integration.js file
 
 // API configuration
-const API_BASE_URL = '/api/auth'; // Adjust based on your backend URL
+const API_BASE_URL = 'http://localhost:3000/api/auth'; // Adjust based on your backend URL
 
 // Auth state management
 let authState = {
