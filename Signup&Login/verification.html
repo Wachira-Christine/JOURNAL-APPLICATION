@@ -6,6 +6,7 @@
   <title>Verify your Account</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../Signup&Login/styles.css" />
+    
 </head>
 <body>
   <!-- Added 'flex' to enable flexbox centering -->
@@ -45,7 +46,7 @@
         <div class="space-y-4 mt-6">
           <p class="text-amber-700 text-center">How would you like to receive your verification code?</p>
           <div class="flex space-x-4">
-            <button id="sendEmaillCodeBtn" class="submit-btn flex-1" title="Send code via Email">
+            <button id="sendEmailCodeBtn" class="submit-btn flex-1" title="Send code via Email">
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
@@ -79,7 +80,13 @@
       </div>
     </div>
   </div>
-
-  <script src="verification.js"></script>
+  <script>
+class NotificationManager {
+    show(message, type = 'info') {
+        alert(`${type.toUpperCase()}: ${message}`);
+    }
+}
+</script>
+  <script src="./verification.js"></script>
 </body>
 </html>

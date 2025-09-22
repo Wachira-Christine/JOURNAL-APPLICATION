@@ -264,8 +264,9 @@ function handleSignup(data) {
 
     // Switch to login mode after successful signup
     setTimeout(() => {
-        switchToLogin();
-        emailInput.value = data.email; // Pre-fill email
+        const params= new URLSearchParams();
+        if (data.email) params.append('email', data.email);
+        window.location.href=`verification.html?${params.toString()}`;
     }, 2000);
 }
 
