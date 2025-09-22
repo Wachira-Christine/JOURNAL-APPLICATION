@@ -67,10 +67,14 @@ async function handleSignup(data) {
 
         if (response.ok) {
             // Registration successful, show OTP verification
-            authState.requiresVerification = true;
-            authState.pendingVerificationEmail = data.email;
-            showOTPVerificationForm();
-            showNotification('Registration successful! Please verify your email with the OTP sent to you.', 'success');
+            // authState.requiresVerification = true;
+            // authState.pendingVerificationEmail = data.email;
+            // showOTPVerificationForm();
+            // showNotification('Registration successful! Please verify your email with the OTP sent to you.', 'success');
+
+             // Redirect to separate verification page
+            window.location.href = `../Signup&Login/verification.html?email=${encodeURIComponent(data.email)}`;
+
         } else {
             throw new Error(result.error || 'Registration failed');
         }
