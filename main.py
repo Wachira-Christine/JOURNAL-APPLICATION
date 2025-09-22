@@ -4,7 +4,6 @@ import requests
 API_BASE_URL = "http://localhost:3000/api/auth"
 
 def login():
-
     print("LOGIN")
     email = input("Enter your email: ").strip()
     password = input("Enter your password: ").strip()
