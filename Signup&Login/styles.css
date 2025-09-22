@@ -21,7 +21,7 @@ body {
     right: -10rem;
     width: 20rem;
     height: 20rem;
-    background-color: #f59e0b; /* amber-500 */
+    background-color: #8b4513; /* coffee brown */
 }
 
 .bg-decoration-2 {
@@ -29,7 +29,7 @@ body {
     left: -10rem;
     width: 20rem;
     height: 20rem;
-    background-color: #f97316; /* orange-500 */
+    background-color: #a0522d; /* sienna brown */
 }
 
 .bg-decoration-3 {
@@ -38,23 +38,23 @@ body {
     transform: translate(-50%, -50%);
     width: 24rem;
     height: 24rem;
-    background-color: #eab308; /* yellow-500 */
+    background-color: #d2b48c; /* tan/light coffee */
     opacity: 0.2;
 }
 
 /* Main login card */
 .login-card {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 248, 240, 0.9); /* warm cream background */
     backdrop-filter: blur(16px);
     border-radius: 1.5rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(251, 191, 36, 0.5); /* amber-200 with opacity */
+    box-shadow: 0 25px 50px -12px rgba(92, 51, 23, 0.25); /* coffee brown shadow */
+    border: 1px solid rgba(160, 82, 45, 0.3); /* sienna border */
     padding: 2rem;
     transition: all 0.3s ease;
 }
 
 .login-card:hover {
-    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 35px 60px -12px rgba(92, 51, 23, 0.35);
 }
 
 /* App icon */
@@ -64,16 +64,16 @@ body {
     justify-content: center;
     width: 4rem;
     height: 4rem;
-    background: linear-gradient(to right, #d97706, #ea580c); /* amber-600 to orange-600 */
+    background: linear-gradient(to right, #8b4513, #a0522d); /* coffee to sienna gradient */
     border-radius: 50%;
     margin-bottom: 1rem;
-    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px -3px rgba(92, 51, 23, 0.2);
 }
 
 /* Authentication toggle */
 .auth-toggle {
     display: flex;
-    background: rgba(251, 191, 36, 0.7); /* amber-100 with opacity */
+    background: rgba(210, 180, 140, 0.4); /* light tan background */
     border-radius: 9999px;
     padding: 0.25rem;
     margin-bottom: 1.5rem;
@@ -88,17 +88,17 @@ body {
     transition: all 0.2s ease;
     border: none;
     cursor: pointer;
-    color: #92400e; /* amber-700 */
+    color: #5c3317; /* dark coffee brown */
 }
 
 .toggle-btn:hover {
-    color: #78350f; /* amber-900 */
+    color: #3e1f0f; /* darker coffee brown */
 }
 
 .toggle-btn.active {
-    background: white;
-    color: #78350f; /* amber-900 */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 248, 240, 0.95); /* warm cream */
+    color: #3e1f0f; /* dark coffee brown */
+    box-shadow: 0 4px 6px -1px rgba(92, 51, 23, 0.1);
 }
 
 /* Form groups */
@@ -117,29 +117,29 @@ body {
     transform: translateY(-50%);
     width: 1.25rem;
     height: 1.25rem;
-    color: #d97706; /* amber-600 */
+    color: #8b4513; /* coffee brown */
 }
 
 .form-input {
     width: 100%;
     padding: 0.75rem 1rem 0.75rem 3rem;
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid #fbbf24; /* amber-300 */
+    background: rgba(255, 248, 240, 0.7); /* warm cream background */
+    border: 1px solid #d2b48c; /* tan border */
     border-radius: 0.75rem;
-    color: #78350f; /* amber-900 */
+    color: #3e1f0f; /* dark coffee brown text */
     transition: all 0.2s ease;
     outline: none;
     font-size: 1rem;
 }
 
 .form-input::placeholder {
-    color: #d97706; /* amber-600 */
+    color: #8b4513; /* coffee brown placeholder */
 }
 
 .form-input:focus {
-    ring: 2px solid #f59e0b; /* amber-500 */
+    ring: 2px solid #a0522d; /* sienna focus ring */
     border-color: transparent;
-    box-shadow: 0 0 0 2px #f59e0b;
+    box-shadow: 0 0 0 2px #a0522d;
 }
 
 /* Password toggle */
@@ -148,7 +148,7 @@ body {
     right: 0.75rem;
     top: 50%;
     transform: translateY(-50%);
-    color: #d97706; /* amber-600 */
+    color: #8b4513; /* coffee brown */
     background: none;
     border: none;
     cursor: pointer;
@@ -156,7 +156,7 @@ body {
 }
 
 .password-toggle:hover {
-    color: #78350f; /* amber-900 */
+    color: #3e1f0f; /* dark coffee brown */
 }
 
 /* Login options */
@@ -170,17 +170,17 @@ body {
 .remember-me {
     display: flex;
     align-items: center;
-    color: #92400e; /* amber-700 */
+    color: #5c3317; /* medium coffee brown */
     cursor: pointer;
 }
 
 .remember-me input {
     margin-right: 0.5rem;
-    accent-color: #d97706; /* amber-600 */
+    accent-color: #8b4513; /* coffee brown */
 }
 
 .forgot-password {
-    color: #d97706; /* amber-600 */
+    color: #8b4513; /* coffee brown */
     background: none;
     border: none;
     cursor: pointer;
@@ -189,13 +189,13 @@ body {
 }
 
 .forgot-password:hover {
-    color: #78350f; /* amber-900 */
+    color: #3e1f0f; /* dark coffee brown */
 }
 
 /* Submit button */
 .submit-btn {
     width: 100%;
-    background: linear-gradient(to right, #d97706, #ea580c); /* amber-600 to orange-600 */
+    background: linear-gradient(to right, #8b4513, #a0522d); /* coffee to sienna gradient */
     color: white;
     font-weight: 600;
     padding: 0.75rem;
@@ -203,13 +203,13 @@ body {
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px -3px rgba(92, 51, 23, 0.2);
     font-size: 1rem;
 }
 
 .submit-btn:hover {
-    background: linear-gradient(to right, #b45309, #c2410c); /* amber-700 to orange-700 */
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #5c3317, #8b4513); /* darker coffee gradient */
+    box-shadow: 0 20px 25px -5px rgba(92, 51, 23, 0.3);
     transform: translateY(-1px);
 }
 
@@ -223,12 +223,12 @@ body {
 .divider-line {
     flex: 1;
     height: 1px;
-    background: #fbbf24; /* amber-300 */
+    background: #d2b48c; /* tan */
 }
 
 .divider-text {
     padding: 0 1rem;
-    color: #d97706; /* amber-600 */
+    color: #8b4513; /* coffee brown */
     font-size: 0.875rem;
 }
 
@@ -241,9 +241,9 @@ body {
 
 .social-btn {
     width: 100%;
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid #fbbf24; /* amber-200 */
-    color: #78350f; /* amber-900 */
+    background: rgba(255, 248, 240, 0.7); /* warm cream background */
+    border: 1px solid #d2b48c; /* tan border */
+    color: #3e1f0f; /* dark coffee brown */
     font-weight: 500;
     padding: 0.75rem;
     border-radius: 0.75rem;
@@ -253,12 +253,12 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px 0 rgba(92, 51, 23, 0.1);
 }
 
 .social-btn:hover {
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 248, 240, 0.9);
+    box-shadow: 0 4px 6px -1px rgba(92, 51, 23, 0.15);
 }
 
 /* Auth footer */
@@ -266,11 +266,11 @@ body {
     margin-top: 1.5rem;
     text-align: center;
     font-size: 0.875rem;
-    color: #92400e; /* amber-700 */
+    color: #5c3317; /* medium coffee brown */
 }
 
 .auth-link {
-    color: #78350f; /* amber-900 */
+    color: #3e1f0f; /* dark coffee brown */
     font-weight: 500;
     background: none;
     border: none;
@@ -281,14 +281,14 @@ body {
 }
 
 .auth-link:hover {
-    text-decoration-color: #78350f; /* amber-900 */
+    text-decoration-color: #3e1f0f; /* dark coffee brown */
 }
 
 /* Bottom text */
 .bottom-text {
     text-align: center;
     margin-top: 1.5rem;
-    color: #92400e; /* amber-800 */
+    color: #5c3317; /* medium coffee brown */
     font-size: 0.875rem;
 }
 
