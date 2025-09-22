@@ -6,7 +6,7 @@ import os
 from secret_manager import generate_and_store_otp
 
 # Load email credentials from .env
-load_dotenv(dotenv_path='.env')
+load_dotenv(dotenv_path='db.env')
 
 EMAIL_ADDRESS = os.getenv("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
@@ -48,7 +48,11 @@ def send_login_otp(username: str, user_email: str) -> None:
 
 # Example usage
 if __name__ == "__main__":
-    test_username = "Abe Kilwake"
-    otp_code = generate_and_store_otp(test_username)
-    print(f"Generated OTP for {test_username}: {otp_code}")
+    import random
 
+    recipient_email = "joy.mutinda@strathmore.edu"  # manual recipient
+    otp = str(random.randint(100000, 999999))       # generate OTP manually
+    subject = "Your Login OTP"
+    body = f"Hello,\n\nYour OTP code is: {otp}\nIt is valid for 5 minutes."
+
+    send_email(recipient_email, subject, body)
