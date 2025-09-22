@@ -462,7 +462,7 @@ function handleAuthSuccess(result) {
 
     // Redirect to dashboard after a short delay
     setTimeout(() => {
-        window.location.href = '/dashboard'; // Adjust URL as needed
+        window.location.href = '../JOURNALPAGE/entrypage.html';
     }, 1500);
 }
 
