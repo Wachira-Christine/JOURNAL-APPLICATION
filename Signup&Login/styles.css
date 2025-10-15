@@ -21,7 +21,7 @@ body {
     right: -10rem;
     width: 20rem;
     height: 20rem;
-    background-color: #8b4513; /* coffee brown */
+    background-color: #f59e0b; /* amber-500 */
 }
 
 .bg-decoration-2 {
@@ -29,7 +29,7 @@ body {
     left: -10rem;
     width: 20rem;
     height: 20rem;
-    background-color: #a0522d; /* sienna brown */
+    background-color: #f97316; /* orange-500 */
 }
 
 .bg-decoration-3 {
@@ -38,23 +38,23 @@ body {
     transform: translate(-50%, -50%);
     width: 24rem;
     height: 24rem;
-    background-color: #d2b48c; /* tan/light coffee */
+    background-color: #eab308; /* yellow-500 */
     opacity: 0.2;
 }
 
 /* Main login card */
 .login-card {
-    background: rgba(255, 248, 240, 0.9); /* warm cream background */
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(16px);
     border-radius: 1.5rem;
-    box-shadow: 0 25px 50px -12px rgba(92, 51, 23, 0.25); /* coffee brown shadow */
-    border: 1px solid rgba(160, 82, 45, 0.3); /* sienna border */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(251, 191, 36, 0.5); /* amber-200 with opacity */
     padding: 2rem;
     transition: all 0.3s ease;
 }
 
 .login-card:hover {
-    box-shadow: 0 35px 60px -12px rgba(92, 51, 23, 0.35);
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.35);
 }
 
 /* App icon */
@@ -64,16 +64,16 @@ body {
     justify-content: center;
     width: 4rem;
     height: 4rem;
-    background: linear-gradient(to right, #8b4513, #a0522d); /* coffee to sienna gradient */
+    background: linear-gradient(to right, #d97706, #ea580c); /* amber-600 to orange-600 */
     border-radius: 50%;
     margin-bottom: 1rem;
-    box-shadow: 0 10px 25px -3px rgba(92, 51, 23, 0.2);
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
 }
 
 /* Authentication toggle */
 .auth-toggle {
     display: flex;
-    background: rgba(210, 180, 140, 0.4); /* light tan background */
+    background: rgba(251, 191, 36, 0.7); /* amber-100 with opacity */
     border-radius: 9999px;
     padding: 0.25rem;
     margin-bottom: 1.5rem;
@@ -88,17 +88,17 @@ body {
     transition: all 0.2s ease;
     border: none;
     cursor: pointer;
-    color: #5c3317; /* dark coffee brown */
+    color: #92400e; /* amber-700 */
 }
 
 .toggle-btn:hover {
-    color: #3e1f0f; /* darker coffee brown */
+    color: #78350f; /* amber-900 */
 }
 
 .toggle-btn.active {
-    background: rgba(255, 248, 240, 0.95); /* warm cream */
-    color: #3e1f0f; /* dark coffee brown */
-    box-shadow: 0 4px 6px -1px rgba(92, 51, 23, 0.1);
+    background: white;
+    color: #78350f; /* amber-900 */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 /* Form groups */
@@ -117,29 +117,29 @@ body {
     transform: translateY(-50%);
     width: 1.25rem;
     height: 1.25rem;
-    color: #8b4513; /* coffee brown */
+    color: #d97706; /* amber-600 */
 }
 
 .form-input {
     width: 100%;
     padding: 0.75rem 1rem 0.75rem 3rem;
-    background: rgba(255, 248, 240, 0.7); /* warm cream background */
-    border: 1px solid #d2b48c; /* tan border */
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #fbbf24; /* amber-300 */
     border-radius: 0.75rem;
-    color: #3e1f0f; /* dark coffee brown text */
+    color: #78350f; /* amber-900 */
     transition: all 0.2s ease;
     outline: none;
     font-size: 1rem;
 }
 
 .form-input::placeholder {
-    color: #8b4513; /* coffee brown placeholder */
+    color: #d97706; /* amber-600 */
 }
 
 .form-input:focus {
-    ring: 2px solid #a0522d; /* sienna focus ring */
+    ring: 2px solid #f59e0b; /* amber-500 */
     border-color: transparent;
-    box-shadow: 0 0 0 2px #a0522d;
+    box-shadow: 0 0 0 2px #f59e0b;
 }
 
 /* Password toggle */
@@ -148,7 +148,7 @@ body {
     right: 0.75rem;
     top: 50%;
     transform: translateY(-50%);
-    color: #8b4513; /* coffee brown */
+    color: #d97706; /* amber-600 */
     background: none;
     border: none;
     cursor: pointer;
@@ -156,7 +156,7 @@ body {
 }
 
 .password-toggle:hover {
-    color: #3e1f0f; /* dark coffee brown */
+    color: #78350f; /* amber-900 */
 }
 
 /* Login options */
@@ -170,17 +170,17 @@ body {
 .remember-me {
     display: flex;
     align-items: center;
-    color: #5c3317; /* medium coffee brown */
+    color: #92400e; /* amber-700 */
     cursor: pointer;
 }
 
 .remember-me input {
     margin-right: 0.5rem;
-    accent-color: #8b4513; /* coffee brown */
+    accent-color: #d97706; /* amber-600 */
 }
 
 .forgot-password {
-    color: #8b4513; /* coffee brown */
+    color: #d97706; /* amber-600 */
     background: none;
     border: none;
     cursor: pointer;
@@ -189,13 +189,13 @@ body {
 }
 
 .forgot-password:hover {
-    color: #3e1f0f; /* dark coffee brown */
+    color: #78350f; /* amber-900 */
 }
 
 /* Submit button */
 .submit-btn {
     width: 100%;
-    background: linear-gradient(to right, #8b4513, #a0522d); /* coffee to sienna gradient */
+    background: linear-gradient(to right, #d97706, #ea580c); /* amber-600 to orange-600 */
     color: white;
     font-weight: 600;
     padding: 0.75rem;
@@ -203,13 +203,13 @@ body {
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 10px 25px -3px rgba(92, 51, 23, 0.2);
+    box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
     font-size: 1rem;
 }
 
 .submit-btn:hover {
-    background: linear-gradient(to right, #5c3317, #8b4513); /* darker coffee gradient */
-    box-shadow: 0 20px 25px -5px rgba(92, 51, 23, 0.3);
+    background: linear-gradient(to right, #b45309, #c2410c); /* amber-700 to orange-700 */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     transform: translateY(-1px);
 }
 
@@ -223,12 +223,12 @@ body {
 .divider-line {
     flex: 1;
     height: 1px;
-    background: #d2b48c; /* tan */
+    background: #fbbf24; /* amber-300 */
 }
 
 .divider-text {
     padding: 0 1rem;
-    color: #8b4513; /* coffee brown */
+    color: #d97706; /* amber-600 */
     font-size: 0.875rem;
 }
 
@@ -241,9 +241,9 @@ body {
 
 .social-btn {
     width: 100%;
-    background: rgba(255, 248, 240, 0.7); /* warm cream background */
-    border: 1px solid #d2b48c; /* tan border */
-    color: #3e1f0f; /* dark coffee brown */
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid #fbbf24; /* amber-200 */
+    color: #78350f; /* amber-900 */
     font-weight: 500;
     padding: 0.75rem;
     border-radius: 0.75rem;
@@ -253,12 +253,12 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    box-shadow: 0 1px 3px 0 rgba(92, 51, 23, 0.1);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 .social-btn:hover {
-    background: rgba(255, 248, 240, 0.9);
-    box-shadow: 0 4px 6px -1px rgba(92, 51, 23, 0.15);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 /* Auth footer */
@@ -266,11 +266,11 @@ body {
     margin-top: 1.5rem;
     text-align: center;
     font-size: 0.875rem;
-    color: #5c3317; /* medium coffee brown */
+    color: #92400e; /* amber-700 */
 }
 
 .auth-link {
-    color: #3e1f0f; /* dark coffee brown */
+    color: #78350f; /* amber-900 */
     font-weight: 500;
     background: none;
     border: none;
@@ -281,14 +281,14 @@ body {
 }
 
 .auth-link:hover {
-    text-decoration-color: #3e1f0f; /* dark coffee brown */
+    text-decoration-color: #78350f; /* amber-900 */
 }
 
 /* Bottom text */
 .bottom-text {
     text-align: center;
     margin-top: 1.5rem;
-    color: #5c3317; /* medium coffee brown */
+    color: #92400e; /* amber-800 */
     font-size: 0.875rem;
 }
 
@@ -336,4 +336,4 @@ body {
         opacity: 0;
         transform: translateY(-10px);
     }
-}
+}g
