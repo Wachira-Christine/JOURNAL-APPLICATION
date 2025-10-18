@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: url('../static/images/download_(7).jpeg') no-repeat center center fixed;
+    background-size: cover;
+    color: #3E2723;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    background-color: #D7CCC8;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(58, 42, 29, 0.15);
+    padding: 40px;
+    overflow: hidden;
+    position: relative;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #D7CCC8;
+    position: relative;
+}
+
+header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: #5D4037;
+    letter-spacing: -0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.home-button {
+    display: inline-block;
+    background: linear-gradient(to right, #6F4E37, #8D6E63);
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(111, 78, 55, 0.3);
+}
+
+.home-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(111, 78, 55, 0.4);
+    background: linear-gradient(to right, #8D6E63, #6F4E37);
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #5D4037;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #8D6E63;
+    display: inline-block;
+}
+
+.new-entry, .previous-entries {
+    margin-bottom: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background: #c8a27a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(111, 78, 55, 0.1);
+}
+
+input, textarea {
+    padding: 16px 20px;
+    margin-bottom: 25px;
+    border: 1px solid #D7CCC8;
+    border-radius: 10px;
+    font-size: 17px;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #8D6E63;
+    box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.2);
+    transform: translateY(-2px);
+}
+
+input {
+    height: 55px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+button {
+    background: linear-gradient(to right, #6F4E37, #8D6E63);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 18px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(111, 78, 55, 0.3);
+    width: 200px;
+    margin-left: auto;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(111, 78, 55, 0.4);
+    background: linear-gradient(to right, #8D6E63, #6F4E37);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.entry {
+    background: linear-gradient(to bottom, #C8A27A 0%, #A67C52 100%);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-left: 6px solid #8D6E63;
+    box-shadow: 0 6px 15px rgba(58, 42, 29, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+
+.entry:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(58, 42, 29, 0.12);
+}
+
+.entry h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #5D4037;
+    font-weight: 600;
+}
+
+.entry p {
+    color: #5D4037;
+    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.entry .date {
+    font-size: 16px;
+    color: #8D6E63;
+    text-align: right;
+    font-style: italic;
+}
+
+.entries-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 1050px) {
+    .container {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    input, textarea, button {
+        font-size: 16px;
+    }
+
+    .entry {
+        padding: 20px;
+    }
+
+    .entry h3 {
+        font-size: 22px;
+    }
+
+    .entry p {
+        font-size: 16px;
+    }
+
+    button {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .home-button {
+        width: 100%;
+        text-align: center;
+    }
+}

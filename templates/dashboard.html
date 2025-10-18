@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="sidebar">
+    <h2>My Journal</h2>
+    <ul>
+        <li><a href="/new-entry">New Entry</a></li>
+        <li><a href="/journal">My Journal</a></li>
+        <li><button id="logoutBtn">Log Out</button></li>
+    </ul>
+</div>
+
+<div class="dashboard-content">
+    <h1>Welcome to Your Journal, {{ username }}!</h1>
+    <p>Select an option from the navigation menu to get started.</p>
+</div>
+
+<script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>

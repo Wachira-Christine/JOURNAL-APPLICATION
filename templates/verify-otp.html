@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verify your Account</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../static/styles.css" />
+    
+</head>
+<body>
+  <!-- Added 'flex' to enable flexbox centering -->
+  <div class="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 flex items-center justify-center p-4">
+
+    <!-- Background decorative elements -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="bg-decoration bg-decoration-1"></div>
+      <div class="bg-decoration bg-decoration-2"></div>
+      <div class="bg-decoration bg-decoration-3"></div>
+    </div>
+
+    <!-- Added 'mx-auto' to center horizontally -->
+    <div class="relative z-10 w-full max-w-md mx-auto">
+      <!-- Verification Card -->
+      <!-- Optional: Adjusted background color for subtle amber tint -->
+      <div class="login-card" style="background: rgba(251, 191, 36, 0.15);">
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <div class="app-icon">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+              </path>
+            </svg>
+          </div>
+          <h1 class="text-3xl font-bold text-amber-900 mb-2">My Journal</h1>
+          <p class="text-amber-700">Your personal space for reflection</p>
+        </div>
+
+        <h1 class="text-3xl font-bold text-amber-900 mb-2">Verify Your Account</h1>
+        <p class="text-amber-700">
+          Enter the verification code sent to your email or phone
+        </p>
+
+        <p id="contactinfo" class="text-amber-700 text-center mb-4"></p>
+
+
+        <!--Send Code Options-->
+        <div class="space-y-4 mt-6">
+          <p class="text-amber-700 text-center">How would you like to receive your verification code?</p>
+          <div class="flex space-x-4">
+            <button id="sendEmailCodeBtn" class="submit-btn flex-1" title="Send code via Email">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+              </svg>
+              <span class="sr-only">Send code via Email</span>
+              Email
+            </button>
+            <button id="sendSMSCodeBtn" class="submit-btn flex-1">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493A1 1 0 0011.28 8H15a2 2 0 012 2v6a2 2 0 01-2 2h-3.28a1 1 0 01-.948-.684l-1.498-4.493A1 1 0 008.72 12H5a2 2 0 01-2-2V5z"></path>
+              </svg>
+              SMS
+            </button>
+          </div>
+        </div>
+
+        <!-- Verification Code Field -->
+        <div class="space-y-4 mt-6">
+          <input type="text" id="verificationCode" placeholder="Enter Verification Code" class="form-input w-full text-center" maxlength="6" />
+          <button type="button" id="verifyBtn" class="submit-btn">Verify</button>
+          <div class="text-center">
+            <button type="button" id="resendCodeBtn" class="text-sm text-amber-600 hover:underline">Didn't recieve the code? Resend</button>
+          </div>
+        </div>
+
+        <!--back to Login-->
+        <div class="text-center mt-6 pt-4 border-t border-amber-200">
+          <button type="button" id="backToLoginBtn" class="text-sm text-amber-600 hover:underline">Back to Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+class NotificationManager {
+    show(message, type = 'info') {
+        alert(`${type.toUpperCase()}: ${message}`);
+    }
+}
+
+
+</script>
+
+<script src="../static/verification.js"></script>
+</body>
+</html>
