@@ -243,7 +243,7 @@ async function handleFormSubmit(event) {
     }
 }
 
-// Handle login - IMPROVED WITH LOGGING
+// Handle login - IMPROVED WITH BETTER ERROR HANDLING
 async function handleLogin(data) {
     console.log('Login attempt:', data);
 
@@ -264,6 +264,10 @@ async function handleLogin(data) {
         const result = await response.json();
         console.log('Login result:', result);
 
+        // Reset button state
+        submitBtn.textContent = 'Sign In';
+        submitBtn.disabled = false;
+
         if (result.success) {
             showNotification(result.message || 'Login successful! Redirecting...', 'success');
 
@@ -274,7 +278,7 @@ async function handleLogin(data) {
             }
 
             // Redirect to dashboard
-            console.log('Redirecting to:', result.redirect_url);
+            console.log('Redirecting to:', result.redirect_url || '/dashboard');
             setTimeout(() => {
                 window.location.href = result.redirect_url || '/dashboard';
             }, 1500);
@@ -292,6 +296,10 @@ async function handleLogin(data) {
     } catch (error) {
         console.error('Login error:', error);
         showNotification('An error occurred during login. Please try again.', 'error');
+
+        // Reset button state
+        submitBtn.textContent = 'Sign In';
+        submitBtn.disabled = false;
     }
 }
 

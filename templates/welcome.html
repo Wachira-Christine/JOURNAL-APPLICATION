@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal App - Welcome</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f97316 0%, #f59e0b 50%, #eab308 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 50px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #f97316;
+            margin-bottom: 15px;
+            font-size: 2.5em;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+
+        .user-type-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .user-type-btn {
+            padding: 20px;
+            border: 3px solid #f97316;
+            border-radius: 12px;
+            background: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .user-type-btn:hover {
+            background: linear-gradient(135deg, #f97316, #f59e0b);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
+        }
+
+        .user-type-btn:hover h2,
+        .user-type-btn:hover p {
+            color: white;
+        }
+
+        .user-type-btn h2 {
+            color: #f97316;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+            transition: color 0.3s ease;
+        }
+
+        .user-type-btn p {
+            color: #888;
+            font-size: 0.95em;
+            transition: color 0.3s ease;
+        }
+
+        .icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📔 Journal App</h1>
+        <p>Welcome! Please select your user type to continue</p>
+
+        <div class="user-type-buttons">
+            <a href="/admin-login" class="user-type-btn">
+                <div class="icon">👨‍💼</div>
+                <h2>Admin</h2>
+                <p>Access admin dashboard and manage users</p>
+            </a>
+
+            <a href="/login" class="user-type-btn">
+                <div class="icon">✍️</div>
+                <h2>User</h2>
+                <p>Access your personal journal</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

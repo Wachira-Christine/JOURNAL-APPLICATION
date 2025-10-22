@@ -95,10 +95,10 @@ def home():
     # Check if user is already logged in
     if 'user_id' in session:
         return redirect('/journal')  # Redirect to journal if already logged in
-    return render_template('index.html')
+    return render_template('welcome.html')
 
 
-@app.route('/signup', methods=['POST'])
+@app.route('/signup', methods=['GET','POST'])
 def signup():
     email = request.json.get('email')
     username = request.json.get('username')
@@ -1258,6 +1258,20 @@ def calendar():
     if 'user_id' not in session:
         return redirect('/')
     return render_template('calendar.html')
+
+@app.route('/login')
+def login_page():
+    if 'user_id' in session:
+        return redirect('/dashboard')
+    return render_template('index.html')
+
+@app.route('/admin-login')
+def admin_login_page():
+    return render_template('admin-login.html')
+
+@app.route('/admin-dashboard')
+def admin_dashboard_page():
+    return render_template('admin-dashboard.html')
 
 
 @app.route('/logout')
