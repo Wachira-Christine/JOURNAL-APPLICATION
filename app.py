@@ -25,28 +25,30 @@ app.config['SESSION_COOKIE_SECURE'] = False  # Set to True in production with HT
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
+password_manager = PasswordManager()
 
-# Initialize CORS with specific configuration
+# Replace your existing CORS configuration (around line 25) with:
 CORS(app,
-     origins=['http://127.0.0.1:5000', 'http://localhost:5000'],
+     origins=['http://127.0.0.1:5000', 'http://localhost:5000', '*'],  # Added '*' for development
      supports_credentials=True,
      methods=['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
      allow_headers=['Content-Type', 'Authorization'])
-# Initialize PasswordManager
-password_manager = PasswordManager()
 
 
-# Database connection (your existing code)
 def get_db_connection():
-    conn = psycopg2.connect(
-        host='aws-1-us-east-1.pooler.supabase.com',
-        port=6543,
-        user='postgres.fhhxgifimxcwfplenhmm',
-        password='T30plU4sOJ984nfV',
-        database='postgres',
-        sslmode='require'
-    )
-    return conn
+    try:
+        conn = psycopg2.connect(
+            host=os.getenv('DB_HOST', 'aws-1-us-east-1.pooler.supabase.com'),
+            port=int(os.getenv('DB_PORT', 6543)),
+            user=os.getenv('DB_USER', 'postgres.fhhxgifimxcwfplenhmm'),
+            password=os.getenv('DB_PASS', 'T30plU4sOJ984nfV'),
+            database=os.getenv('DB_NAME', 'postgres'),
+            sslmode='require'
+        )
+        return conn
+    except Exception as e:
+        print(f"Database connection error: {e}")
+        raise
 
 
 # Email configuration (your existing code)
