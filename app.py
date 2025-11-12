@@ -41,7 +41,7 @@ def get_db_connection():
             host=os.getenv('DB_HOST', 'aws-1-us-east-1.pooler.supabase.com'),
             port=int(os.getenv('DB_PORT', 6543)),
             user=os.getenv('DB_USER', 'postgres.fhhxgifimxcwfplenhmm'),
-            password=os.getenv('DB_PASS', 'T30plU4sOJ984nfV'),
+            password=os.getenv('DB_PASS', 'OXsneQjf0vBsxfd5'),
             database=os.getenv('DB_NAME', 'postgres'),
             sslmode='require'
         )
@@ -1285,12 +1285,56 @@ def logout():
 # Health check and debug routes (your existing code)
 @app.route('/health')
 def health():
-    pass
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor()
+        cur.execute('SELECT 1;')
+        result = cur.fetchone()
+        status = "ok" if result else "error"
+        return jsonify({
+            'success': True,
+            'status': status,
+            'message': 'Server and database are running properly.'
+        })
+    except Exception as e:
+        print(f"Health check error: {e}")
+        return jsonify({
+            'success': False,
+            'status': 'error',
+            'message': str(e)
+        }), 500
+    finally:
+        if 'cur' in locals():
+            cur.close()
+        if 'conn' in locals():
+            conn.close()
 
 
 @app.route('/debug-users')
 def debug_users():
-    pass
+    try:
+        conn = get_db_connection()
+        cur = conn.cursor(cursor_factory=RealDictCursor)
+
+        cur.execute("""
+                    SELECT id, username, email, created_at
+                    FROM users
+                    ORDER BY id ASC
+                    """)
+        users = cur.fetchall()
+
+        return jsonify({
+            'success': True,
+            'users': users
+        })
+    except Exception as e:
+        print(f"Error fetching users: {e}")
+        return jsonify({'success': False, 'message': str(e)}), 500
+    finally:
+        if 'cur' in locals():
+            cur.close()
+        if 'conn' in locals():
+            conn.close()
 
 
 if __name__ == '__main__':
